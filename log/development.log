@@ -3568,3 +3568,665 @@ Processing by Api::V1::CommentsController#destroy as */*
 Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 10.3ms | Allocations: 4369)
 
 
+Started GET "/api/v1/watchlist/2" for ::1 at 2024-03-12 13:02:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchlist/2"):
+  
+Started POST "/api/v1/watchlist" for ::1 at 2024-03-12 13:06:19 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/watchlist"):
+  
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:06:46 +0530
+Processing by Api::V1::WatchlistsController#create as */*
+  Parameters: {"watchlist"=>{"user_id"=>2, "watchlist_movie_id"=>3}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "watchlist_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["watchlist_movie_id", "3"], ["created_at", "2024-03-12 07:36:46.784002"], ["updated_at", "2024-03-12 07:36:46.784002"]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+Completed 201 Created in 72ms (Views: 0.4ms | ActiveRecord: 7.1ms | Allocations: 32585)
+
+
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:10:26 +0530
+  
+SyntaxError (/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:22: syntax error, unexpected ',', expecting =>
+      render json:{@watchlist, message: 'Watchlist was succ...
+                             ^
+):
+  
+app/controllers/api/v1/watchlists_controller.rb:22: syntax error, unexpected ',', expecting =>
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:11:01 +0530
+  
+SyntaxError (/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:22: syntax error, unexpected ',', expecting =>
+...ist was successfully created'}, status: :created
+...                              ^
+):
+  
+app/controllers/api/v1/watchlists_controller.rb:22: syntax error, unexpected ',', expecting =>
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:12:19 +0530
+Processing by Api::V1::WatchlistsController#create as */*
+  Parameters: {"watchlist"=>{"user_id"=>2, "watchlist_movie_id"=>3}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "watchlist_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["watchlist_movie_id", "3"], ["created_at", "2024-03-12 07:42:19.603912"], ["updated_at", "2024-03-12 07:42:19.603912"]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+Completed 201 Created in 33ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 13952)
+
+
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:38:59 +0530
+  
+SyntaxError (/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not created'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not updated'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...atchlist not destroyed'} status: :unprocessable_entity
+...                         ^~~~~~
+):
+  
+app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 13:40:25 +0530
+  
+SyntaxError (/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not created'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not updated'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...atchlist not destroyed'} status: :unprocessable_entity
+...                         ^~~~~~
+):
+  
+app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 14:29:34 +0530
+  
+SyntaxError (/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not created'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...'watchlist not updated'} status: :unprocessable_entity
+...                         ^~~~~~
+/home/gaurav-ranawat/Downloads/MovieApp/app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...atchlist not destroyed'} status: :unprocessable_entity
+...                         ^~~~~~
+):
+  
+app/controllers/api/v1/watchlists_controller.rb:24: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:33: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/controllers/api/v1/watchlists_controller.rb:42: syntax error, unexpected local variable or method, expecting `end' or dummy end
+Started POST "/api/v1/watchlists" for ::1 at 2024-03-12 14:29:48 +0530
+Processing by Api::V1::WatchlistsController#create as */*
+  Parameters: {"watchlist"=>{"user_id"=>3, "watchlist_movie_id"=>4}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "watchlist_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["watchlist_movie_id", "4"], ["created_at", "2024-03-12 08:59:48.716206"], ["updated_at", "2024-03-12 08:59:48.716206"]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:21:in `create'
+Completed 201 Created in 21ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 12942)
+
+
+Started GET "/api/v1/watchlists" for ::1 at 2024-03-12 14:30:23 +0530
+Processing by Api::V1::WatchlistsController#index as */*
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 965)
+
+
+Started GET "/api/v1/watchlist/2" for ::1 at 2024-03-12 14:30:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchlist/2"):
+  
+Started GET "/api/v1/watchlist/1" for ::1 at 2024-03-12 14:30:47 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchlist/1"):
+  
+Started GET "/api/v1/watchlists/1" for ::1 at 2024-03-12 14:31:05 +0530
+Processing by Api::V1::WatchlistsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:11:in `show'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1177)
+
+
+Started PATCH "/api/v1/watchlists/1" for ::1 at 2024-03-12 14:32:17 +0530
+Processing by Api::V1::WatchlistsController#update as */*
+  Parameters: {"user_id"=>3, "id"=>"1", "watchlist"=>{"user_id"=>3}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.0ms | Allocations: 514)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.9.1) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.9.1) lib/rack/etag.rb:29:in `call'
+rack (3.0.9.1) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.9.1) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.9.1) lib/rack/method_override.rb:28:in `call'
+rack (3.0.9.1) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.9.1) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started PATCH "/api/v1/watchlists/1" for ::1 at 2024-03-12 14:32:36 +0530
+Processing by Api::V1::WatchlistsController#update as */*
+  Parameters: {"user_id"=>3, "id"=>"1", "watchlist"=>{"user_id"=>3}}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+  [1m[36mWatchlist Update (0.4ms)[0m  [1m[33mUPDATE "watchlists" SET "user_id" = ?, "updated_at" = ? WHERE "watchlists"."id" = ?[0m  [["user_id", 3], ["updated_at", "2024-03-12 09:02:37.061068"], ["id", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 6.7ms | Allocations: 14396)
+
+
+Started DELETE "/api/v1/watchlists/1" for ::1 at 2024-03-12 14:33:09 +0530
+Processing by Api::V1::WatchlistsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:39:in `destroy'
+  [1m[36mWatchlist Destroy (0.9ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:39:in `destroy'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1780)
+
+
+Started DELETE "/api/v1/watchlists/1" for ::1 at 2024-03-12 14:33:16 +0530
+Processing by Api::V1::WatchlistsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:38:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 862)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Watchlist with 'id'=1):
+  
+app/controllers/api/v1/watchlists_controller.rb:38:in `destroy'
+Started GET "/api/v1/watchlaters" for ::1 at 2024-03-12 15:51:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchlaters"):
+  
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 15:51:48 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/watchlaters"):
+  
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 15:52:32 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/watchlaters"):
+  
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 15:52:53 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>5, "watchlater_movie_id"=>9}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mWatchlater Create (0.4ms)[0m  [1m[32mINSERT INTO "watchlaters" ("user_id", "watchlater_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 5], ["watchlater_movie_id", "9"], ["created_at", "2024-03-12 10:22:53.225550"], ["updated_at", "2024-03-12 10:22:53.225550"]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 201 Created in 51ms (Views: 1.3ms | ActiveRecord: 14.7ms | Allocations: 14214)
+
+
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 15:53:11 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>6, "watchlater_movie_id"=>10}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mWatchlater Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlaters" ("user_id", "watchlater_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 6], ["watchlater_movie_id", "10"], ["created_at", "2024-03-12 10:23:11.504469"], ["updated_at", "2024-03-12 10:23:11.504469"]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 2558)
+
+
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 15:53:26 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>6, "watchlater_movie_id"=>11}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mWatchlater Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlaters" ("user_id", "watchlater_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 6], ["watchlater_movie_id", "11"], ["created_at", "2024-03-12 10:23:26.503822"], ["updated_at", "2024-03-12 10:23:26.503822"]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2554)
+
+
+Started GET "/api/v1/watchlaters" for ::1 at 2024-03-12 15:54:55 +0530
+Processing by Api::V1::WatchlatersController#index as */*
+  Parameters: {"watchlater"=>{"user_id"=>6, "watchlater_movie_id"=>11}}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters"[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 925)
+
+
+Started GET "/api/v1/watchlists/1" for ::1 at 2024-03-12 15:55:37 +0530
+Processing by Api::V1::WatchlistsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:11:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2218)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Watchlist with 'id'=1):
+  
+app/controllers/api/v1/watchlists_controller.rb:11:in `show'
+Started GET "/api/v1/watchlists" for ::1 at 2024-03-12 15:55:56 +0530
+Processing by Api::V1::WatchlistsController#index as */*
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 2865)
+
+
+Started GET "/api/v1/watchlists/2" for ::1 at 2024-03-12 15:56:24 +0530
+Processing by Api::V1::WatchlistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 523)
+
+
+Started GET "/api/v1/watchlists" for ::1 at 2024-03-12 15:56:53 +0530
+Processing by Api::V1::WatchlistsController#index as */*
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ app/controllers/api/v1/watchlists_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 737)
+
+
+Started PATCH "/api/v1/watchlists/2" for ::1 at 2024-03-12 15:57:51 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+        "watchlater_movie_id":12
+        
+    }
+}
+}
+Processing by Api::V1::WatchlistsController#update as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 755)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/watchlists_controller.rb:29:in `update'
+Started PATCH "/api/v1/watchlists/2" for ::1 at 2024-03-12 15:58:03 +0530
+Processing by Api::V1::WatchlistsController#update as */*
+  Parameters: {"watchlater_movie_id"=>12, "id"=>"2", "watchlist"=>{}}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:29:in `update'
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms | Allocations: 876)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: watchlist):
+  
+app/controllers/api/v1/watchlists_controller.rb:51:in `watchlist_params'
+app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+Started PATCH "/api/v1/watchlists/2" for ::1 at 2024-03-12 15:59:05 +0530
+Processing by Api::V1::WatchlistsController#update as */*
+  Parameters: {"watchlater_movie_id"=>12, "id"=>"2", "watchlist"=>{}}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:29:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 4.1ms | Allocations: 3658)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: watchlist):
+  
+app/controllers/api/v1/watchlists_controller.rb:51:in `watchlist_params'
+app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlists/2" for ::1 at 2024-03-12 16:00:34 +0530
+Processing by Api::V1::WatchlistsController#update as */*
+  Parameters: {"watchlater_movie_id"=>12, "id"=>"2", "watchlist"=>{}}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlists_controller.rb:29:in `update'
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms | Allocations: 860)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: watchlist):
+  
+app/controllers/api/v1/watchlists_controller.rb:51:in `watchlist_params'
+app/controllers/api/v1/watchlists_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/2" for ::1 at 2024-03-12 16:01:36 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater_movie_id"=>12, "id"=>"2", "watchlater"=>{"watchlater_movie_id"=>12}}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mWatchlater Update (1.1ms)[0m  [1m[33mUPDATE "watchlaters" SET "watchlater_movie_id" = ?, "updated_at" = ? WHERE "watchlaters"."id" = ?[0m  [["watchlater_movie_id", "12"], ["updated_at", "2024-03-12 10:31:36.267416"], ["id", 2]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.6ms | Allocations: 5514)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started GET "/api/v1/watchlater" for ::1 at 2024-03-12 16:02:07 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchlater"):
+  
+Started GET "/api/v1/watchlaters" for ::1 at 2024-03-12 16:02:20 +0530
+Processing by Api::V1::WatchlatersController#index as */*
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters"[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 886)
+
+
+Started GET "/api/v1/watchla" for ::1 at 2024-03-12 16:02:36 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/watchla"):
+  
+Started GET "/api/v1/watchlaters" for ::1 at 2024-03-12 16:02:46 +0530
+Processing by Api::V1::WatchlatersController#index as */*
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters"[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 795)
+
+
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:03:04 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater_movie_id"=>12, "id"=>"1", "watchlater"=>{"watchlater_movie_id"=>12}}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mWatchlater Update (1.0ms)[0m  [1m[33mUPDATE "watchlaters" SET "watchlater_movie_id" = ?, "updated_at" = ? WHERE "watchlaters"."id" = ?[0m  [["watchlater_movie_id", "12"], ["updated_at", "2024-03-12 10:33:04.143400"], ["id", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.3ms | Allocations: 2546)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:06:10 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1059)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 16:11:06 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>7, "watchlater_movie_id"=>12}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 32ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 9904)
+
+
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 16:11:26 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>8, "watchlater_movie_id"=>12}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 11ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2677)
+
+
+Started POST "/api/v1/watchlaters" for ::1 at 2024-03-12 16:11:32 +0530
+Processing by Api::V1::WatchlatersController#create as */*
+  Parameters: {"watchlater"=>{"user_id"=>6, "watchlater_movie_id"=>12}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mWatchlater Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlaters" ("user_id", "watchlater_movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 6], ["watchlater_movie_id", "12"], ["created_at", "2024-03-12 10:41:33.006794"], ["updated_at", "2024-03-12 10:41:33.006794"]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:20:in `create'
+Completed 201 Created in 15ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 6674)
+
+
+Started GET "/api/v1/watchlaters" for ::1 at 2024-03-12 16:11:43 +0530
+Processing by Api::V1::WatchlatersController#index as */*
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters"[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 856)
+
+
+Started PUT "/api/v1/watchlaters/5" for ::1 at 2024-03-12 16:12:04 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"5"}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.1ms | Allocations: 842)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Watchlater with 'id'=5):
+  
+app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:12:24 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 1056)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:19:02 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"1"}
+  [1m[36mWatchlater Load (3.0ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 5.1ms | Allocations: 1326)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:21:44 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 3.1ms | Allocations: 4749)
+
+
+  
+ArgumentError (Unrecognized status code :OK):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:22:01 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>12}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 4441)
+
+
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:22:36 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>13}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mWatchlater Update (1.3ms)[0m  [1m[33mUPDATE "watchlaters" SET "watchlater_movie_id" = ?, "updated_at" = ? WHERE "watchlaters"."id" = ?[0m  [["watchlater_movie_id", "13"], ["updated_at", "2024-03-12 10:52:36.299072"], ["id", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:29:in `update'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 6.2ms | Allocations: 6207)
+
+
+  
+ArgumentError (Unrecognized status code :update):
+  
+app/controllers/api/v1/watchlaters_controller.rb:30:in `update'
+Started PUT "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:22:54 +0530
+Processing by Api::V1::WatchlatersController#update as */*
+  Parameters: {"watchlater"=>{"watchlater_movie_id"=>13}, "id"=>"1"}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:28:in `update'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 4443)
+
+
+Started DELETE "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:23:14 +0530
+Processing by Api::V1::WatchlatersController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+  [1m[36mWatchlater Destroy (1.2ms)[0m  [1m[31mDELETE FROM "watchlaters" WHERE "watchlaters"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 12.2ms | Allocations: 1734)
+
+
+Started DELETE "/api/v1/watchlaters/1" for ::1 at 2024-03-12 16:23:25 +0530
+Processing by Api::V1::WatchlatersController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mWatchlater Load (0.2ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:37:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 849)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Watchlater with 'id'=1):
+  
+app/controllers/api/v1/watchlaters_controller.rb:37:in `destroy'
+Started DELETE "/api/v1/watchlaters/2" for ::1 at 2024-03-12 16:23:35 +0530
+Processing by Api::V1::WatchlatersController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mWatchlater Load (0.1ms)[0m  [1m[34mSELECT "watchlaters".* FROM "watchlaters" WHERE "watchlaters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+  [1m[36mWatchlater Destroy (1.2ms)[0m  [1m[31mDELETE FROM "watchlaters" WHERE "watchlaters"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/watchlaters_controller.rb:38:in `destroy'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 1708)
+
+

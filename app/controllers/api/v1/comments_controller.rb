@@ -21,27 +21,27 @@ class Api::V1::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render json: @comment, status: :created
+      render json: {comment:@comment, message:'comment successfully created'}, status: :created
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not creaded'} status: :unprocessable_entity
     end
   end
 
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      render json: @comment, status: :ok
+      render json: {comment:@comment, message:'comment successfully updated'}, status: :updated
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not updated'} status: :unprocessable_entity
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      render json: { message: 'comments successfully deleted' }, status: :ok
+      render json: { comment:@comment,message: 'comments successfully deleted' }, status: :ok
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not deleted'} status: :unprocessable_entity
     end
   end
 
