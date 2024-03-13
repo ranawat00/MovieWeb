@@ -10,8 +10,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user =User.find(params[:id])
-    @user? (render json: @user):(render json: {errors:'User not found'})
+    @user = User.find_by(id: params[:id])
+    if @user
+      render json: @user, status: :ok
+    else
+      render json: { errors: 'User not found' }, status: :not_found
+    end
   end
 
   def create
@@ -25,12 +29,15 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update 
-    
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      render json: @user, status: :ok
+    @user = User.find_by(id: params[:id])
+    if @user
+      if @user.update(user_params)
+        render json: @user, status: :ok
+      else
+        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      end
     else
-      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: 'User not found' }, status: :not_found
     end
   end
 
