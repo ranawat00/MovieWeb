@@ -136,9 +136,9 @@ RSpec.describe Api::V1::UsersController, type: :controller do
         expect(response).to have_http_status(:ok)
 
         user_response = JSON.parse(response.body)
-        expect(user_response['username']).to eq('Gaurav123')
-        expect(user_response['email']).to eq('gauravranawat7900@gmail.com')
-        expect(user_response['id']).to eq(user1.id)
+        expect(user_response ['user']['username']).to eq('Gaurav123')
+        expect(user_response['user']['email']).to eq('gauravranawat7900@gmail.com')
+        expect(user_response['user']['id']).to eq(user1.id)
       end
   
       it 'update the  user' do
@@ -187,5 +187,36 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
   end
-   
+
+
+  describe 'DELETE #delete' do
+  
+    context 'when user is present' do 
+      let!(:user1) { User.create(firstname: 'gaurav', lastname: 'ranawat', username: 'Gaurav123', email: 'john@example.com', password: 'Gaurav123') }
+      let!(:user2) { User.create(firstname: 'akshay', lastname: 'kumar', username: 'Akshay123', email: 'akshay@example.com', password: 'akshay123') }
+      it 'return a success response' do
+        delete :destroy, params: { id: user1.id }
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'delete the user' do
+        delete :destroy, params: {id:user2.id}
+        json_response = JSON.parse(response.body)
+        expect(json_response).to eq("message" => "User successfully deleted")
+      end
+    end
+    context 'when user is not present' do
+      it 'returns an error message as JSON' do
+        delete :destroy, params: { id: "" } 
+        expect(response).to have_http_status(:not_found)
+
+        error_response = JSON.parse(response.body)
+        expect(error_response).to include('errors')
+        expect(error_response['errors']).to eq('User not found')
+      end
+    end
+
+
+
+  end
 end

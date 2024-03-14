@@ -1,17 +1,21 @@
 class Api::V1::CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create,:destroy,:update]
-
-
-
-
-  def index
-    @comments = Comment.all
-    render json: @comments, status: :ok
+  class Api::V1::CommentsController < ApplicationController
+    def index
+      @comments = Comment.all
+  
+      if @comments.present?
+        render json: @comments, status: :ok
+      else
+        render json: { message: ' comments not found' }, status: :not_found
+      end
+    end
   end
+  
 
   def show
     @comment = Comment.find(params[:id])
-    if @comment
+    if @comment.present?
     render json: @comment, status: :ok
     else
       render json: { error: 'Comment not found' }, status: :not_found
@@ -23,7 +27,7 @@ class Api::V1::CommentsController < ApplicationController
     if @comment.save
       render json: {comment:@comment, message:'comment successfully created'}, status: :created
     else
-      render json: {errors: @comment.errors.full_messages , message: 'comment not creaded'} status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not creaded'}, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +36,7 @@ class Api::V1::CommentsController < ApplicationController
     if @comment.update(comment_params)
       render json: {comment:@comment, message:'comment successfully updated'}, status: :updated
     else
-      render json: {errors: @comment.errors.full_messages , message: 'comment not updated'} status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not updated'}, status: :unprocessable_entity
     end
   end
 
@@ -41,7 +45,7 @@ class Api::V1::CommentsController < ApplicationController
     if @comment.destroy
       render json: { comment:@comment,message: 'comments successfully deleted' }, status: :ok
     else
-      render json: {errors: @comment.errors.full_messages , message: 'comment not deleted'} status: :unprocessable_entity
+      render json: {errors: @comment.errors.full_messages , message: 'comment not deleted'}, status: :unprocessable_entity
     end
   end
 

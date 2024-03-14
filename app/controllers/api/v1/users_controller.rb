@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   # before_action :authorize_request ,except: [:create]
   # before_action :find_user, except: %i[create index]
-  skip_before_action :verify_authenticity_token, only: [:create,:destroy]
+  skip_before_action :verify_authenticity_token, only: [:create,:destroy,:update]
 
 
   def index
@@ -29,10 +29,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update 
+    
     @user = User.find_by(id: params[:id])
     if @user
       if @user.update(user_params)
-        render json: @user, status: :ok
+        render json: {user:@user,message: 'User successfully updated' }, status: :ok
       else
         render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
       end
@@ -42,11 +43,15 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    if @user.destroy
-      render json: { message: 'User successfully deleted' }, status: :ok
-    else 
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    @user = User.find_by(id: params[:id])
+    if @user.present?
+      if @user.destroy
+        render json: { message: 'User successfully deleted' }, status: :ok
+      else 
+        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { errors: "User not found" }, status: :not_found
     end
   end
 

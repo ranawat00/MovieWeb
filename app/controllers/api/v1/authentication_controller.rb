@@ -15,7 +15,7 @@ class Api::V1::AuthenticationController < ApplicationController
   end
 
   def forgot_password
-    debugger
+    
     @user = User.find_by_email(params[:email])
     if @user
       @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
