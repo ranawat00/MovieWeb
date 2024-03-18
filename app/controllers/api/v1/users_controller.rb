@@ -1,12 +1,14 @@
 class Api::V1::UsersController < ApplicationController
-  # before_action :authorize_request ,except: [:create]
-  # before_action :find_user, except: %i[create index]
   skip_before_action :verify_authenticity_token, only: [:create,:destroy,:update]
 
 
   def index
     @users = User.all
-    render json: @users,state: :ok
+    if @users.present?
+      render json: @users, status: :ok
+    else
+      render json: { errors: "No users found" }, status: :not_found
+    end
   end
 
   def show
