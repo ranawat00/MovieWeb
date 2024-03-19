@@ -71,3 +71,9 @@ group :test do
 end
 
 gem 'faker'
+gem 'shoulda-matchers', '~> 4.0'
+gem 'activeadmin'
+gem "sassc-rails"
+gem "factory_bot_rails"
+
+gem "devise", "~> 4.9"

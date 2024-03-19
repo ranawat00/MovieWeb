@@ -13,7 +13,7 @@ class Api::V1::CommentsController < ApplicationController
 
 
   def show
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by(id:params[:id])
     if @comment.present?
     render json: @comment, status: :ok
     else
