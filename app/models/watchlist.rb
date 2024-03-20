@@ -6,4 +6,6 @@ class Watchlist < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "id", "id_value", "updated_at", "user_id", "watchlist_movie_id"]
   end
+  attr_accessor :sensitive_attribute
+
 end

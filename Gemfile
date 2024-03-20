@@ -77,3 +77,4 @@ gem "sassc-rails"
 gem "factory_bot_rails"
 
 gem "devise", "~> 4.9"
+gem 'rails-controller-testing'

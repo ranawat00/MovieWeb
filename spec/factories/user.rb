@@ -5,6 +5,8 @@ FactoryBot.define do
     username { Faker::Name.name }
     email { Faker::Internet.email }
     password { "password" }
+    sensitive_attribute { 'some_sensitive_data' }
+
     # password_confirmation { "password"}
     # reset_password_token { nil }
     # reset_password_sent_at { nil }
